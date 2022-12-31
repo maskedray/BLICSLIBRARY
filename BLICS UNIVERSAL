@@ -2,6 +2,14 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
 
 local Window = Library.CreateLib("Blics Universal", "Midnight")
 
+local Tab = Window:NewTab("UI Settings")
+
+local Section = Tab:NewSection("UI")
+
+Section:NewKeybind("UI Toggle", "Keybind", Enum.KeyCode.M, function()
+	Library:ToggleUI()
+end)
+
 local Tab = Window:NewTab("Local Player")
 
 local Section = Tab:NewSection("Walkspeed")
@@ -32,12 +40,16 @@ end)
 
 Section:NewToggle("Moon Jump", "Toggles Moon Jump", function(state)
     if state then
-        workspace.Gravity = 50
+        workspace.Gravity = 98
     else
         workspace.Gravity = 192.2
     end
 end)
 
-Section:NewSlider("Jumppower Slider", "Slide to your jumppower", 192.2, 1, function(s)
+Section:NewSlider("Gravity Slider", "Slide to your Gravity", 192.2, 1, function(s)
     workspace.Gravity = s
 end)
+
+local Tab = Window:NewTab("G")
+
+local Section = Tab:NewSection("UI")
