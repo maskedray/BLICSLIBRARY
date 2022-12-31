@@ -1,0 +1,43 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("Blics Universal", "Midnight")
+
+local Tab = Window:NewTab("Local Player")
+
+local Section = Tab:NewSection("Walkspeed")
+
+Section:NewButton("Reset Walkspeed", "Resets Your Speed", function()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+end)
+
+Section:NewSlider("Walkspeed Slider", "Slide to your walkspeed", 100, 1, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+local Section = Tab:NewSection("Jumppower")
+
+Section:NewButton("Reset Jumppower", "Resets Your Jumppower", function()
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+end)
+
+Section:NewSlider("Jumppower Slider", "Slide to your jumppower", 100, 1, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+local Section = Tab:NewSection("Gravity")
+
+Section:NewButton("Reset Gravity", "Resets Your Gravity", function()
+    workspace.Gravity = 192.2
+end)
+
+Section:NewToggle("Moon Jump", "Toggles Moon Jump", function(state)
+    if state then
+        workspace.Gravity = 50
+    else
+        workspace.Gravity = 192.2
+    end
+end)
+
+Section:NewSlider("Jumppower Slider", "Slide to your jumppower", 192.2, 1, function(s)
+    workspace.Gravity = s
+end)
