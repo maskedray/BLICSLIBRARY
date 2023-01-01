@@ -50,6 +50,10 @@ Section:NewSlider("Gravity Slider", "Slide to your Gravity", 192.2, 1, function(
     workspace.Gravity = s
 end)
 
-local Tab = Window:NewTab("G")
+local Tab = Window:NewTab("FE Scripts")
 
-local Section = Tab:NewSection("UI")
+local Section = Tab:NewSection("FE")
+
+Section:NewButton("FE Snake Script", "Activates FE Snake", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/FinnExploitz/BLICSLIBRARY/main/FESNAKE'))();
+end)
